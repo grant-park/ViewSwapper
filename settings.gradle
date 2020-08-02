@@ -1,2 +1,2 @@
-include ':app'
+include ':viewswapper'
 rootProject.name = "ViewSwapper"
