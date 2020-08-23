@@ -28,7 +28,7 @@ class ViewSwapper : FrameLayout {
         }
     }
 
-    fun next(view: View, transition: Transition?) {
+    fun next(view: View, transition: Transition? = null) {
         if (transition == null) {
             removeAllViews()
             addView(view)
