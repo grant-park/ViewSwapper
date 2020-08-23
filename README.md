@@ -3,7 +3,7 @@ Simple view container that supports transitions from Android (API level 19+).
 
 ## Install
 ```
-implementation 'ai.grant:viewswapper:1.0.0'
+implementation 'ai.grant:viewswapper:1.0.1'
 ```
 
 ## Usage
