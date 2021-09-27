@@ -2,8 +2,18 @@
 Simple view container that supports transitions from Android (API level 19+).
 
 ## Install
+In your root `build.gradle`
+```groovy
+allprojects {
+    repositories {
+        ...
+        mavenCentral()
+    }
+}
 ```
-implementation 'ai.grant:viewswapper:1.0.1'
+In your app `build.gradle`
+```groovy
+implementation 'ai.grant:viewswapper:1.0.0'
 ```
 
 ## Usage
