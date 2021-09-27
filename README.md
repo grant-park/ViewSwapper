@@ -1,6 +1,8 @@
 # ViewSwapper
 Simple view container that supports transitions from Android (API level 19+).
 
+![animation2](https://user-images.githubusercontent.com/8159855/134946352-6060917b-fe54-4cec-b3df-51a781dcf04c.gif)
+
 ## Install
 In your root `build.gradle`
 ```groovy
