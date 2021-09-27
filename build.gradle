@@ -1,73 +1,25 @@
 buildscript {
     ext.kotlin_version = "1.3.72"
+    ext.dokka_version = '1.5.0'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
     }
 }
 
 plugins {
     id 'java-library'
-    id 'maven-publish'
-    id 'signing'
+    id "org.jetbrains.dokka" version "$dokka_version"
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
-    }
-}
-
-afterEvaluate {
-    task sourceJar(type: Jar) {
-        from sourceSets.main.allJava
-        archiveClassifier = "sources"
-    }
-
-    group = 'ai.grant'
-    version = '1.0.1'
-
-    java {
-        withSourcesJar()
-    }
-
-    publishing {
-        publications {
-            maven(MavenPublication) {
-                from components.java
-                artifact sourceJar
-                pom {
-                    name = "View Swapper"
-                    artifactId = "viewswapper"
-                    packaging = "jar"
-                    description = "\t\n" +
-                            "Simple view container that supports transitions from Android (API level 19+)."
-                    url = "https://github.com/grant-park/ViewSwapper"
-                    licenses {
-                        license {
-                            name = "The Apache License, Version 2.0"
-                            url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                        }
-                    }
-                    developers {
-                        developer {
-                            id = "grant-park"
-                            name = "Grant Park"
-                            email = "granthpark@gmail.com"
-                        }
-                    }
-                    scm {
-                        connection = "scm:git:https://github.com/grant-park/ViewSwapper.git"
-                        developerConnection = "scm:git:https://github.com/grant-park/ViewSwapper.git"
-                        url = "https://github.com/grant-park/ViewSwapper.git"
-                    }
-                }
-            }
-        }
     }
 }
